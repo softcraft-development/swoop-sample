@@ -13,3 +13,7 @@ jar {
     baseName = 'SwoopSample'
     version =  '0.1.0'
 }
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.8.RELEASE")
+}
