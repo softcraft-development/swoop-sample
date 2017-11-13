@@ -9,6 +9,10 @@ repositories {
     mavenCentral()
 }
 
+eclipse {
+    project.natures 'org.eclipse.buildship.core.gradleprojectnature'
+}
+
 jar {
     baseName = 'SwoopSample'
     version =  '0.1.0'
