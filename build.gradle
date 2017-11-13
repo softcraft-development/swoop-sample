@@ -3,3 +3,8 @@ apply plugin: 'java'
 repositories {
     mavenCentral()
 }
+
+jar {
+    baseName = 'SwoopSample'
+    version =  '0.1.0'
+}
