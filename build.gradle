@@ -1,6 +1,11 @@
+plugins {
+    id 'org.springframework.boot' version '1.5.8.RELEASE'
+}
+
 apply plugin: 'application'
 apply plugin: 'eclipse'
 apply plugin: 'java'
+apply plugin: 'war'
 
 mainClassName = 'ca.softcraft.swoop.sample.controllers.RootController'
 
@@ -8,6 +13,8 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
+	jcenter()
+    maven { url "http://repo.spring.io/libs-snapshot" }
     mavenCentral()
 }
 
@@ -15,14 +22,14 @@ eclipse {
     project.natures 'org.eclipse.buildship.core.gradleprojectnature'
 }
 
-jar {
-    baseName = 'SwoopSample'
-    manifest {
-        attributes 'Main-Class': 'ca.softcraft.swoop.sample.controllers.RootController'
-    }
-    version =  '0.1.0'
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.thymeleaf:thymeleaf-spring4")
+    compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 }
 
-dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web:1.5.8.RELEASE")
+war {
+    baseName = 'SwoopSample'
+    version =  '0.1.0'
 }
