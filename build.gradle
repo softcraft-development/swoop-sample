@@ -17,6 +17,9 @@ eclipse {
 
 jar {
     baseName = 'SwoopSample'
+    manifest {
+        attributes 'Main-Class': 'ca.softcraft.swoop.sample.controllers.RootController'
+    }
     version =  '0.1.0'
 }
 
