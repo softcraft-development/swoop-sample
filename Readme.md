@@ -30,3 +30,29 @@ Once you see that, you can visit the following URLs as described in the sample s
 * [http://localhost/time/now](http://localhost/time/now)
 
 Be sure to adjust the server name and/or port as necessary to suit your local environment. 
+
+Thoughts on Sample Projects For Job Applications
+------------------------------------------------
+
+When hiring software developers and other personnel for critical and technical roles, I believe it's very important to get solid evidence that they can have the skills they claim they do. This is by no means an easy task, but programming challenges like this one are probably the best tool we have for accomplishing this.
+
+That being said, programming challenges are very different than working in the real world. They have a lot of different desires and requirements relative to a real-life project, and some of them are mutually exclusive with others. For instance, sample projects:
+* Should be simple enough to be well understood by both the implementer and the reviewers.
+* Should be complex enough to allow the implementer to demonstrate the skills necessary in a complex field.
+* Should be small enough to implement and review quickly.
+* Should be large enough to allow the implementer to demonstrate the breadth of knowledge they have and will need.
+* Should incorporate the technologies relevant to the hiring organization.
+* Should not get too attached to specific technologies, as technologies are always changing.
+* Should use technologies that the implementer is familiar with, so that they can demonstrate their speed & efficiency.
+* Should not use only technologies that the implementer is familiar with, so that they can demonstrate their ability to learn new things efficiently.
+* Should be as close as possible to how the organization actually handles projects (in terms of specifications and implementation goals).
+* Should not get bogged down with details that are relevant to the real-world organization, but not to the sample project. (ex: building with a continuous integration server)
+* Should have a specification that gives the implementer enough detail in order to implement the project.
+* Should not have such a detailed specification that it removes all ambiguity. Knowing where ambiguity exists & how to deal with ambiguity is an important part of being a software developer. 
+* Should not take a lot of effort for the organization to create. Developers are busy people and juggle lots of priorities.
+
+It becomes a very tall order (if not an actual impossibility) to create a sample project spec that can satisfy all of these points. I've done several programming projects like this over the years, and every one of them has had difficulties in one area or another. 
+ 
+So, I tend to treat sample projects less as an actual project to be implemented, and more as a point of discussion. The individual technical decisions that I make on a minute-to-minute basis are less important here than they are for a real-world project. Instead, they become opportunities to describe (typically in textual fashion) the reasoning behind why I made a particular decision.
+
+In this respect, the Swoop challenge was a good one, because on a technical level it was extremely easy and simple. That gives more time for discussion, which is where the real value lies.
