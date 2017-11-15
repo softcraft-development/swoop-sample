@@ -56,3 +56,16 @@ It becomes a very tall order (if not an actual impossibility) to create a sample
 So, I tend to treat sample projects less as an actual project to be implemented, and more as a point of discussion. The individual technical decisions that I make on a minute-to-minute basis are less important here than they are for a real-world project. Instead, they become opportunities to describe (typically in textual fashion) the reasoning behind why I made a particular decision.
 
 In this respect, the Swoop challenge was a good one, because on a technical level it was extremely easy and simple. That gives more time for discussion, which is where the real value lies.
+
+Notes On New Technologies
+-------------------------
+
+While I've spent over a decade been building web applications in Java, I haven't done much recently. Instead I've worked more in Ruby on Rails, ASP.NET (including WebAPI), and Node.js. Creating this project in Java was an interesting homecoming because it gave me a chance to discover how the Java landscape had evolved in the years I was away.
+
+I had these thoughts on technologies that I learned specifically for this sample project:
+* Spring Boot seems to be an excellent MVC framework for Java RESTful API applications. It is very clean and unintrusive. The documentation was very well written, and I didn't have much difficulty at all getting it to work as expected. Of course, I did not go deeply into the details of a complex Spring application, but from what I've seen it's a great place to start. I'd put it on par with (or above) all of the other web application frameworks I've used.
+* Docker has so far lived up to the hype. Between the functionality, the documentation, and the tooling, it was indeed very easy to build an image and get it to run. Based on what I've read so far, it looks very powerful, and should easily support taking an application from development through to a production deployment in a load-balanced cluster of (micro)services.
+* Gradle looks like a pretty effective build & dependency tool for Java. I didn't get very deep into it, but it seems mature & capable enough.
+* Jackson is a capable JSON library, although it's not necessarily ideal to always have to declare a class for every JSON document you want to create or consume. There may be better ways out there.
+* I wasn't terribly impressed with the Apache HttpClient library, even the Fluent (ie: easy-to-use) version. The documentation was relatively difficult to read, but it was functional at least.
+    
