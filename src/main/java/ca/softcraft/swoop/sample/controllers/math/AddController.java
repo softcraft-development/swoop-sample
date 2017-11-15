@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Add two numbers together, as per the spec.
+ * 
+ * This isn't really a "RESTful" controller, as it's dealing with an action (adding), not a resource
+ * (numbers). But no big deal for this project.
+ */
 @RestController
 public class AddController {
 	/**
