@@ -4,6 +4,8 @@ Author: Craig Walker (https://github.com/softcraft-development)
 
 This is my submission for the sample programming challenge project for Swoop. In addition to instructions and documentation, I'm also using this Readme file to discuss my philosophies, techniques, thought processes, and decisions. Additional comments are dispersed throughout the code where they are relevant; I recommend reading through the code to fully understand the choices and approaches I've made.
 
+The canonical source for this project is https://github.com/softcraft-development/swoop-sample.
+
 Quick Start
 -----------
 
