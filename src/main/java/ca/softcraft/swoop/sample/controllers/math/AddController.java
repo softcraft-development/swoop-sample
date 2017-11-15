@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AddController {
 	/**
-	 * Add two numbers together and return the result.
+	 * Add two numbers submitted via a GET request.
 	 * 
 	 * "n1" and "n2" are the URL parameter names used in the requirements, so it
 	 * makes some sense to preserve them throughout the application. However, there
@@ -21,6 +21,20 @@ public class AddController {
 	 * of terms rather than a fixed number of them. Ideally, these ideas would be
 	 * used to propose changes the specification; since that's not possible here,
 	 * we'll stick to the spec as written.
+	 * 
+	 * @param n1
+	 *            The first number to add.
+	 * @param n2
+	 *            The second number to add.
+	 * @return The total of the two numbers formatted as a human-friendly localized string
+	 */
+	@RequestMapping(path = "/math/add", method = RequestMethod.GET)
+	String get(@RequestParam double n1, @RequestParam double n2) {
+		return add(n1, n2);
+	}
+
+	/**
+	 * Add two numbers together and return the formatted result.
 	 * 
 	 * There's no specs for the qualities/types of the "numbers" that we're adding.
 	 * The URL parameters are inherently Strings, and so could be parsed/converted
@@ -55,10 +69,9 @@ public class AddController {
 	 *            The first number to add.
 	 * @param n2
 	 *            The second number to add.
-	 * @return The total of the two numbers
+	 * @return The total of the two numbers formatted as a human-friendly localized string
 	 */
-	@RequestMapping(path = "/math/add", method = RequestMethod.GET)
-	String get(@RequestParam double n1, @RequestParam double n2) {
+	private String add(double n1, double n2) {
 		/*
 		 * We're letting Spring/RequestParam deal with the data validation here;
 		 * entering a non-double value should be handled & rejected by Spring. In a
