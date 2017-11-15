@@ -27,6 +27,11 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry sourcepath="/Users/craig/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/fluent-hc/4.5.3/e4f23b4cfb5a9c08013bbbee30c87069f6307190/fluent-hc-4.5.3-sources.jar" kind="lib" path="/Users/craig/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/fluent-hc/4.5.3/76487e3a4fa77b2dd6cb1927ea423e220d7efbab/fluent-hc-4.5.3.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="/Users/craig/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/1.5.8.RELEASE/7bbd9ff60ed9cd30a505c2784a17f292875dc948/spring-boot-starter-1.5.8.RELEASE-sources.jar" kind="lib" path="/Users/craig/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/1.5.8.RELEASE/18048efe1f06569022a53cc3fb2fe9c0162935a3/spring-boot-starter-1.5.8.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -102,6 +107,11 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry sourcepath="/Users/craig/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.3/4969730c661fff76fa7f9d4c7c61545817f5b033/httpclient-4.5.3-sources.jar" kind="lib" path="/Users/craig/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.3/d1577ae15f01ef5438c5afc62162457c00a34713/httpclient-4.5.3.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="/Users/craig/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/1.5.8.RELEASE/712d3d3b56cee0bc12cfdef48c245085d334f96c/spring-boot-autoconfigure-1.5.8.RELEASE-sources.jar" kind="lib" path="/Users/craig/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/1.5.8.RELEASE/e4f2efa4c319f4e3613d94fbccfdb5ccda6873e3/spring-boot-autoconfigure-1.5.8.RELEASE.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -133,6 +143,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="/Users/craig/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.12.RELEASE/2106c4c25ad9f0021109c2087d4c39b71ddcc6f4/spring-core-4.3.12.RELEASE-sources.jar" kind="lib" path="/Users/craig/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.12.RELEASE/4cebc69478c6d350dbd5af28e3db7d5694f416e3/spring-core-4.3.12.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/craig/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/ecf26c7507d67782a3bbd148d170b31dfad001aa/commons-logging-1.2-sources.jar" kind="lib" path="/Users/craig/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
@@ -183,6 +198,16 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="/Users/craig/.gradle/caches/modules-2/files-2.1/org.unbescape/unbescape/1.1.0.RELEASE/ffc384b1f9fcd7d9a61d764b3cafccca187cb02f/unbescape-1.1.0.RELEASE-sources.jar" kind="lib" path="/Users/craig/.gradle/caches/modules-2/files-2.1/org.unbescape/unbescape/1.1.0.RELEASE/ab0db4fe0a6fa89fb8da2a40008a4e63a7f3f5b9/unbescape-1.1.0.RELEASE.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/craig/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.8/4b69507bc39c2e0c14798dd91ff4da82ac356f81/httpcore-4.4.8-sources.jar" kind="lib" path="/Users/craig/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.8/70539e2a07865bab38b4153da1ce599cf081790a/httpcore-4.4.8.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/craig/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.10/11fb3d88ae7e3b757d70237064210ceb954a5a04/commons-codec-1.10-sources.jar" kind="lib" path="/Users/craig/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.10/4b95f4897fa13f2cd904aee711aeafc0c5295cd8/commons-codec-1.10.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
