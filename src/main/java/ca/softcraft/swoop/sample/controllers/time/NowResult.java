@@ -1,5 +1,8 @@
 package ca.softcraft.swoop.sample.controllers.time;
 
+import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalAccessor;
+
 /**
  *
  * The spec says "Return the result or the timestring in a rational JSON
@@ -155,5 +158,20 @@ public class NowResult {
 	 */
 	public int getUtcOffset() {
 		return _utcOffset;
+	}
+
+	/**
+	 * Create a new NowResult from a TemporaAccessor and a utcOffset
+	 * 
+	 * @param time
+	 *            The date and time to use.
+	 * @param utcOffset
+	 *            The UTC offset in minutes.
+	 * @return A NowResult based on the time and UTC offset.
+	 */
+	public static NowResult fromTemporalAccessor(TemporalAccessor time, int utcOffset) {
+		return new NowResult(time.get(ChronoField.YEAR), time.get(ChronoField.MONTH_OF_YEAR),
+				time.get(ChronoField.DAY_OF_MONTH), time.get(ChronoField.HOUR_OF_DAY),
+				time.get(ChronoField.MINUTE_OF_HOUR), time.get(ChronoField.SECOND_OF_MINUTE), utcOffset);
 	}
 }
