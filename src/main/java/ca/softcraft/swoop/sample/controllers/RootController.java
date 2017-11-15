@@ -9,7 +9,7 @@ public class RootController {
 	@RequestMapping("/")
 	@ResponseBody
 	String home() {
-		return "Hello World!";
+		return "Welcome to the Swoop Sample project.";
 	}
 
 }
