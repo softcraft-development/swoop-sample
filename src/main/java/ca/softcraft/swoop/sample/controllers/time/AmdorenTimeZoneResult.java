@@ -9,6 +9,9 @@ import org.apache.http.client.fluent.Request;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * An object that maps to the JSON result from the Amdoren Time Zone API call.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AmdorenTimeZoneResult {
 	private String _time;
