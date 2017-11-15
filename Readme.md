@@ -75,6 +75,33 @@ I had these thoughts on technologies that I learned specifically for this sample
 * Jackson is a capable JSON library, although it's not necessarily ideal to always have to declare a class for every JSON document you want to create or consume. There may be better ways out there.
 * I wasn't terribly impressed with the Apache HttpClient library, even the Fluent (ie: easy-to-use) version. The documentation was relatively difficult to read, but it was functional at least.
 
+Building & Running the App
+--------------------------
+
+As mentioned above, I've published my Docker image of the app to `softcraft/swoop-sample:latest`. 
+
+If you'd like to build and run the application yourself, first clone the repository:
+
+    git clone git@github.com:softcraft-development/swoop-sample.git
+    
+Then, from the cloned repository directory, build the application via the Gradle wrapper:
+
+    ./gradlew build
+    
+(This assumes you're on a UNIX-like system; adjust the paths as necessary for Windows if applicable.)
+
+Gradle builds an executable JAR file located in `build/libs`. You can execute this JAR to spawn an embedded Tomcat server running the Spring app. Remember to set the environment variable with the Amdoren API key:
+
+    SWOOP_SAMPLE_AMDOREN_API_KEY=[your_api_key] java -jar build/libs/SwoopSample.jar
+
+This app uses port 8080, so be sure that this port is available and that you alter your URLs to use it. 
+
+Gradle also builds a WAR file, located at `build/libs/SwoopSample-0.1.0.war`. You can deploy this to a standalone servlet/web application server if you like.
+
+The command to build a Docker image from the executable JAR and the Dockerfile is:
+
+    docker build -t swoop-sample .  
+
 Service Design and Implementation Preferences
 ---------------------------------------------
 
