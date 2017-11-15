@@ -111,3 +111,31 @@ With this in mind, the Amdoren API key is acquired from outside the app, and is 
 I've worked to make this as painless as possible. There are brief instructions on acquiring a key in this document, and I'll just supply my own key in another communication channel. 
 
 The key is fed into the application via the `SWOOP_SAMPLE_AMDOREN_API_KEY` environment variable. This mechanism is universally available across all platforms. Docker lets you pass it in via the `docker run` command, but also gives you more options for customization across a container farm via Docker Compose. (I haven't gone as far as to start building a Docker Compose configuration in the interests of time and simplicity.) For simple key-value pairs, environment variables are quite capable, and are simpler (especially in a Docker environment) than trying to set configuration properties via files. Lastly, configuration via environment variable is the preferred way of configuring apps on Heroku, with which I have a significant amount of experience. Thus, this is my preferred way of storing secrets & other simple configuration information.
+
+Caching
+-------
+
+The spec artifacts make a request:
+
+    Explain how caching could be performed and pros/cons
+
+I don't understand why this request was included, because I don't see how caching would fit into this app naturally.
+
+A cache trades off one resource in order to provide better performance for another resource. Generally, that means spending memory to reduce the load and access time for network access, disk retrieval, and/or CPU load (particularly when doing calculations). The consequence of caching is that the cached version of data is never the canonical version of that data (and should not be considered as such), so you always have to be concerned with the accuracy / timeliness of (potentially stale) cached data. As the saying goes:
+
+       There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.
+
+The decision to implement caching should never be undertaken lightly, and is almost never a blanket solution to performance problems. 
+
+Thus, I don't see any opportunities for caching in this particular (and extremely simple) app, except as a way to arbitrarily demonstrate the ability to implement caching systems. There are two pieces of functionality to the app, neither of which warrant caching:
+1. `/math/add` (both GET and POST version) perform addition on two arbitrary numbers. Trying to cache the results of this very simple operation would only *slow down* the application, which defeats the major purpose of caching in the first place. Furthermore, the possible space of keys and values is very large (64 bits of double-precision floating point numbers, when squared for two operands, is 2^2^64, or 3.4e38; that's significantly more than the nummber of atoms in the earth). This means that, without any more information on the range of values that we are likely to get, the cache hit rate is going to be abysmal.
+1. `/time/now` appears to have a purpose of reformatting the current time based on an API call. Caching a value at any point in this process would only serve to make the (literally real-time) results inaccurate.
+
+Having said that, caching is a very important part of any modern real-world web application. There's a whole host of caching options available, depending on the situation. I can list a few:
+* Client-side caching (cookies, Local Storage, browser cache) to avoid network round-trips.
+* View caching (common in traditional Rails apps, less so for web services) to reduce server-side rendering time.
+* In-memory data stores (ex: Redis, memcached) as a way to reduce database calls and CPU-intensive calculations.
+* Database record caching, usually baked into database engines.
+* Using disk (HDDs or SSDs) as caches for slow document generation or retrieval systems.
+
+How and when caching should be done is very problem-specific. As with all performance and throughput issues, developers and architects should have a clearly defined problem and metrics to back it up before undertaking a solution. 
