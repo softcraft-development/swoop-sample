@@ -45,7 +45,32 @@ public class AddController {
 		operands.setN2(n2);
 		return addResponse(operands);
 	}
-	 
+
+	/**
+	 * Add two numbers submitted via a POST request.
+	 * 
+	 * Note that in a real-world app you wouldn't use a POST to do this sort of
+	 * action because the action is idempotent (ie: it does not change server
+	 * state), whereas POST is supposed to not be. The GET version is more
+	 * appropriate.
+	 * 
+	 * Note that the spec says "(allow for form params 1&2 in a POST body)"; this
+	 * implies that the incoming Content-Type is
+	 * "application/x-www-form-urlencoded". In a real-world app we might want to
+	 * accept a JSON document as the body instead (or in addition to).
+	 * 
+	 * @return The total of the two numbers formatted as a human-friendly localized
+	 *         string
+	 */
+	@PostMapping("/math/add")
+	String post(@ModelAttribute AddOperands operands) {
+		/*
+		 * Again, we're relying on Spring to validate that the form parameters are
+		 * actually as we expect.
+		 */
+		return addResponse(operands);
+	}
+
 	/**
 	 * Get the total of the operands and format the result for the response body.
 	 * 
