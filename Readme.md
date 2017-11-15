@@ -128,6 +128,8 @@ You can run the test suite by executing this command:
 
     `gradle test`
     
+I've also included Postman integration tests as requested. Note that the integration tests assume that the server is running at http://localhost:80. These tests call the API and check that the results are as expected. To run them, import `src/test/resources/Swoop-Sample.postman_collection.json` into Postman and run the collection.
+    
 Automated testing is a very important aspect of software development. In a real-world development environment, I would want to have test coverage measured by an automatic tool. Generally, a project / ticket should only be considered complete if the percentage of test coverage in the system increases. However, this always has to be balanced against the other priorities of a project (specifically time & money). Decreasing test coverage is considered technical debt which, in a healthy organization, must be paid down at some point.
  
 Developer.Aero vs Amdoren Time Zone APIs
