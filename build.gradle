@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath ("org.junit.platform:junit-platform-gradle-plugin:1.0.0-M4")
+    }
+}
+
 plugins {
     id 'org.springframework.boot' version '1.5.8.RELEASE'
 }
@@ -5,6 +14,7 @@ plugins {
 apply plugin: 'application'
 apply plugin: 'eclipse'
 apply plugin: 'java'
+apply plugin: 'org.junit.platform.gradle.plugin'
 apply plugin: 'war'
 
 mainClassName = 'ca.softcraft.swoop.sample.Application'
@@ -32,6 +42,16 @@ dependencies {
 	compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.2'
     compile 'org.apache.httpcomponents:fluent-hc:4.5.3'
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    
+    testCompile("junit:junit:4.12")
+    testRuntime("org.junit.vintage:junit-vintage-engine:4.12.0-M4")
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0-M4")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0-M4")
+    testCompile("org.junit.platform:junit-platform-runner:1.0.0-M4")
+}
+
+junitPlatform {
+    details 'tree'
 }
 
 war {
