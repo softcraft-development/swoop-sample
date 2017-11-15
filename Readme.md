@@ -23,7 +23,7 @@ You'll see a console message similar to the following:
 
     Tomcat started on port(s): 8080 (http)
     
-Once you see that, you can visit the following URLs as describe in the sample spec:
+Once you see that, you can visit the following URLs as described in the sample spec:
 
 * [http://localhost/math/add?n1=3&n2=7.5](http://localhost/math/add?n1=3&n2=7.5)
 * `POST` a form body with the `n1` and `n2` parameters to `http://localhost/math/add `
