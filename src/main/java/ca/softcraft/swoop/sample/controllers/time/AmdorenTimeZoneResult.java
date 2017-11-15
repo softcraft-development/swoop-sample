@@ -67,13 +67,19 @@ public class AmdorenTimeZoneResult {
 	}
 
 	/**
-	 * Call the Amdoren TimeZone API for Calgary and return an AmdorenTimeZoneResult.
+	 * Call the Amdoren TimeZone API for Calgary and return an
+	 * AmdorenTimeZoneResult.
 	 * 
 	 * @param apiKey
 	 *            The registered API key for Amdoren.
 	 * @return The AmdorenTimeZoneResult containing the result of the API call.
 	 */
 	public static AmdorenTimeZoneResult load(String apiKey) {
+		/*
+		 * The spec just wants the time zone from MST, so we can hardcode the location
+		 * to Calgary here. Obviously, we could parameterize this for greater
+		 * flexibility if we wanted to.
+		 */
 		String url = String.format("https://www.amdoren.com/api/timezone.php?api_key=%s&loc=Calgary", apiKey);
 		String json;
 		try {
