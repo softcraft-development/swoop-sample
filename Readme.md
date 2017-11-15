@@ -127,6 +127,8 @@ I've included some JUnit unit tests to test the low-level functionality. When te
 You can run the test suite by executing this command:
 
     `gradle test`
+    
+Automated testing is a very important aspect of software development. In a real-world development environment, I would want to have test coverage measured by an automatic tool. Generally, a project / ticket should only be considered complete if the percentage of test coverage in the system increases. However, this always has to be balanced against the other priorities of a project (specifically time & money). Decreasing test coverage is considered technical debt which, in a healthy organization, must be paid down at some point.
  
 Developer.Aero vs Amdoren Time Zone APIs
 ----------------------------------------
