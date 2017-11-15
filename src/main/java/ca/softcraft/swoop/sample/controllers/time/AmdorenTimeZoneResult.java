@@ -32,9 +32,18 @@ public class AmdorenTimeZoneResult {
 	 * @return a TemporalAccessor for the given time string.
 	 */
 	public TemporalAccessor getTemporalAccessor() {
-		DateTimeFormatter ofPattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		DateTimeFormatter ofPattern = getDateTimeFormatter();
 		TemporalAccessor temporalAccessor = ofPattern.parse(getTime());
 		return temporalAccessor;
+	}
+
+	/**
+	 * Get the DateTimeFormatter that's used to parse the Time string.
+	 * 
+	 * @return A DateTimeFormatter compatible with the Amdoren Time Zone API.
+	 */
+	public static DateTimeFormatter getDateTimeFormatter() {
+		return DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 	}
 
 	/**
