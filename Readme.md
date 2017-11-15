@@ -57,6 +57,10 @@ So, I tend to treat sample projects less as an actual project to be implemented,
 
 In this respect, the Swoop challenge was a good one, because on a technical level it was extremely easy and simple. That gives more time for discussion, which is where the real value lies.
 
+You'll note that I talk repeatedly about "real-world apps" in my commentary. I believe it's important to stress when the decisions I make in this project aren't necessarily the same as the ones I would make in an actual product development environment, and to explain why there is a discrepancy. Again, in my opinion, it's the thought process here that matters, not the actual results.
+
+Similarly, I use phrases like "clarifying specifications". In my experience, specification are *always* ambiguous, especially compared to the precise detail required to actually implement a successful software project. In the real world, I'm constantly acquiring accurate details about what is necessary for a project. For a sample project, that's generally not possible, so instead I'll make reasonable assumptions and then document them. Assumptions are a bad thing for a real-world project and should be eliminated as often as possible. 
+
 Notes On New Technologies
 -------------------------
 
