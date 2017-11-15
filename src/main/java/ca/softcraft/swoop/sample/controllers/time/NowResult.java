@@ -4,6 +4,7 @@ import java.time.temporal.ChronoField;
 import java.time.temporal.TemporalAccessor;
 
 /**
+ * An object that maps to the result JSON for the /time/now call.
  *
  * The spec says "Return the result or the timestring in a rational JSON
  * document." So what is a "rational JSON document" for this result, which
