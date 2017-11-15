@@ -72,6 +72,21 @@ I had these thoughts on technologies that I learned specifically for this sample
 * Gradle looks like a pretty effective build & dependency tool for Java. I didn't get very deep into it, but it seems mature & capable enough.
 * Jackson is a capable JSON library, although it's not necessarily ideal to always have to declare a class for every JSON document you want to create or consume. There may be better ways out there.
 * I wasn't terribly impressed with the Apache HttpClient library, even the Fluent (ie: easy-to-use) version. The documentation was relatively difficult to read, but it was functional at least.
+
+Service Design and Implementation Preferences
+---------------------------------------------
+
+When I'm developing software and managing projects, I start with two basic principles:
+* KISS: Keep It Simple, Stupid.
+* YAGNI: You Ain't Gonna Need It.
+
+Both of these amount to the same thing: don't complicate things unnecessarily, and don't build things in advance of actually needing them. This is even more important for this project with Swoop, which has expressed a preference for faster results over depth and completness. 
+
+With that in mind, there weren't many service design decisions to be made for this project. The specs outlined an extremely simple set of functionality, so there wasn't much room to make many design or architectural choices. (Balancing this with time to implement and evaluate is one of the difficulties in creating an effective sample project specification.) 
+
+I can say that my starting premise for any modern web application is a RESTful web service. REST sets out a path for a standardized way to organize API calls; it makes things very clear. I'm keeping an eye on GraphQL as an alternative, but REST is certainly good enough for now. 
+
+Having said that, the API outlined by the spec is not particularly RESTful, as it deals more with actions/verbs rather than resources/nouns. In a simple project like this, that's fine, but in a more complex project I'd raise the issue for discussion. 
  
 Developer.Aero vs Amdoren Time Zone APIs
 ----------------------------------------
