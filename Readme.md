@@ -68,4 +68,25 @@ I had these thoughts on technologies that I learned specifically for this sample
 * Gradle looks like a pretty effective build & dependency tool for Java. I didn't get very deep into it, but it seems mature & capable enough.
 * Jackson is a capable JSON library, although it's not necessarily ideal to always have to declare a class for every JSON document you want to create or consume. There may be better ways out there.
 * I wasn't terribly impressed with the Apache HttpClient library, even the Fluent (ie: easy-to-use) version. The documentation was relatively difficult to read, but it was functional at least.
-    
+ 
+Developer.Aero vs Amdoren Time Zone APIs
+----------------------------------------
+ 
+I wanted to use the Developer.Aero API as described in the spec. However, the website currently does not provide a mechanism for creating an Application / API key, so I was not able to integrate with it. Instead, I found another free API that returns time & zone information for a location at [Amdoren](https://www.amdoren.com). It's simple enough to create an account & API key at that site. If you like though, I'll share my API key through a private channel.
+
+API Key Security
+----------------
+
+The spec makes a comment regarding some of the desired artifacts:
+
+     security choices regarding api keys or credentials
+     
+Any application secrets or authentication information (user names, passwords, API keys, public/private keys, etc) should *never* be included in any file that goes into source control. If someone *does* commit a secret to source control, then one of two things needs to happen:
+1. The secret needs to be invalidated and re-issued.
+1. The source history must be rewritten to remove the commit with the secret. Git makes this possible, but it's not terribly easy, and is time-consuming.
+
+With this in mind, the Amdoren API key is acquired from outside the app, and is not stored in either the source code, Docker file, or this Readme file. Unfortunately, this makes the application harder to run, because the executor needs to acquire the key and somehow pass it into the application/container.
+
+I've worked to make this as painless as possible. There are brief instructions on acquiring a key in this document, and I'll just supply my own key in another communication channel. 
+
+The key is fed into the application via the `SWOOP_SAMPLE_AMDOREN_API_KEY` environment variable. This mechanism is universally available across all platforms. Docker lets you pass it in via the `docker run` command, but also gives you more options for customization across a container farm via Docker Compose. (I haven't gone as far as to start building a Docker Compose configuration in the interests of time and simplicity.) For simple key-value pairs, environment variables are quite capable, and are simpler (especially in a Docker environment) than trying to set configuration properties via files. Lastly, configuration via environment variable is the preferred way of configuring apps on Heroku, with which I have a significant amount of experience. Thus, this is my preferred way of storing secrets & other simple configuration information.
