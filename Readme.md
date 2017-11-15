@@ -74,6 +74,8 @@ I had these thoughts on technologies that I learned specifically for this sample
 * Gradle looks like a pretty effective build & dependency tool for Java. I didn't get very deep into it, but it seems mature & capable enough.
 * Jackson is a capable JSON library, although it's not necessarily ideal to always have to declare a class for every JSON document you want to create or consume. There may be better ways out there.
 * I wasn't terribly impressed with the Apache HttpClient library, even the Fluent (ie: easy-to-use) version. The documentation was relatively difficult to read, but it was functional at least.
+* I tried to deploy the Docker image to AWS ECS. However, the ECS documentation was out of date relative to the UI, and I ran into a problem trying to deploy the service to the load balancer. I'll try to figure it out later, but for now I am not able to complete this request given the time available. 
+
 
 Building & Running the App
 --------------------------
