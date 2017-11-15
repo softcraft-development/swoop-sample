@@ -50,8 +50,8 @@ public class NowResult {
 	private final int _year;
 	/*
 	 * Note that I'm defining this as the "common" month number (and ISO 8601
-	 * standard month number) of January=1, instead of the Java internal standard of
-	 * January=0.
+	 * standard month number) of January=1. java.time uses this standard, although
+	 * java.util.Calendar did not.
 	 */
 	private final int _month;
 	private final int _day;
