@@ -118,6 +118,15 @@ With that in mind, there weren't many service design decisions to be made for th
 I can say that my starting premise for any modern web application is a RESTful web service. REST sets out a path for a standardized way to organize API calls; it makes things very clear. I'm keeping an eye on GraphQL as an alternative, but REST is certainly good enough for now. 
 
 Having said that, the API outlined by the spec is not particularly RESTful, as it deals more with actions/verbs rather than resources/nouns. In a simple project like this, that's fine, but in a more complex project I'd raise the issue for discussion. 
+
+Tests
+-----
+
+I've included some JUnit unit tests to test the low-level functionality. When testing real-world apps, I prefer Behaviour Driven Development-style tests, as I find it's much easier to write a large suite of test cases for complex code, and have those test cases understood by others. However, in the interest of time, I've gone with simpler JUnit assertion-style tests.
+
+You can run the test suite by executing this command:
+
+    `gradle test`
  
 Developer.Aero vs Amdoren Time Zone APIs
 ----------------------------------------
