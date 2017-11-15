@@ -1,8 +1,5 @@
 package ca.softcraft.swoop.sample.controllers.time;
 
-import java.util.GregorianCalendar;
-import java.util.TimeZone;
-
 /**
  *
  * The spec says "Return the result or the timestring in a rational JSON
