@@ -1,0 +1,247 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Swoop-Sample",
+		"_postman_id": "fda53fdd-bef2-c508-1838-2da43360067e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add GET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Body is the total\"] = responseBody === \"10.5\";",
+							"",
+							"tests[\"Content-Type is text/plain\"] = postman.getResponseHeader(\"Content-Type\").startsWith(\"text/plain\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "http://localhost:80/math/add?n1=3.5&n2=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"math",
+						"add"
+					],
+					"query": [
+						{
+							"key": "n1",
+							"value": "3.5",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "n2",
+							"value": "7",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Time/Now",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Content-Type is text/plain\"] = postman.getResponseHeader(\"Content-Type\").startsWith(\"application/json\");",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"var current = new Date();",
+							"var utc = current.getTime() + (current.getTimezoneOffset() * 60000);",
+							"var lima = new Date(utc + (jsonData.utcOffset * 1000));",
+							"",
+							"tests[\"Year is current\"] = jsonData.year === lima.getFullYear();",
+							"tests[\"Month is current\"] = jsonData.month === lima.getMonth() + 1;",
+							"tests[\"Day is current\"] = jsonData.day === lima.getDate();",
+							"tests[\"Hour is current\"] = jsonData.hour === lima.getHours();",
+							"tests[\"Minute is current\"] = jsonData.minute === lima.getMinutes();",
+							"tests[\"Second is current\"] = jsonData.second === lima.getSeconds();"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:80/time/now",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add GET with FR locale",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Body is the total\"] = responseBody === \"10.5\";",
+							"",
+							"tests[\"Content-Type is text/plain\"] = postman.getResponseHeader(\"Content-Type\").startsWith(\"text/plain\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "http://localhost:80/math/add?n1=3.5&n2=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"math",
+						"add"
+					],
+					"query": [
+						{
+							"key": "n1",
+							"value": "3.5",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "n2",
+							"value": "7",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add POST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Body is the total\"] = responseBody === \"28.13\";",
+							"",
+							"tests[\"Content-Type is text/plain\"] = postman.getResponseHeader(\"Content-Type\").startsWith(\"text/plain\")"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:80/math/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "n1",
+							"value": "11.13",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "n2",
+							"value": "17",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add POST with FR locale",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Body is the total\"] = responseBody === \"28.13\";",
+							"",
+							"tests[\"Content-Type is text/plain\"] = postman.getResponseHeader(\"Content-Type\").startsWith(\"text/plain\")"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:80/math/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "n1",
+							"value": "11.13",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "n2",
+							"value": "17",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
